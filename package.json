@@ -1,5 +1,5 @@
 {
-  "homepage": "http;//anthony5196.hithub.io/recipe-book",
+  "homepage": "http;//anthony5196.github.io/recipe-book",
   "name": "yes",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -40,6 +40,10 @@
       "last 1 safari version"
     ]
   },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  },
+
   "main": "index.js",
   "repository": "https://github.com/anthony5196/recipe-book",
   "author": "anthony5196 <jlepe@ucsd.edu>",
