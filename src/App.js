@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Recipe from "./Recipe"
+import Recipe from "./Recipe";
 import "./App.css";
+
+/**/
 
 const App = () => {
   const APP_ID = "edf0da85";
   const APP_KEY = "f7ce8a0a2cff9447606274d9e264d277";
 
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [query, setQuery] = useState("Whiskey");
 
   useEffect(() => {
@@ -23,14 +25,14 @@ const App = () => {
     console.log(data.hits);
   };
 
-  const updateSearch = e => {
+  const updateSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  const getSearch = e => {
+  const getSearch = (e) => {
     e.preventDefault();
     setQuery(search);
-    setSearch('')
+    setSearch("");
   };
 
   return (
@@ -40,6 +42,7 @@ const App = () => {
           className="search-bar"
           type="text"
           value={search}
+          placeholder="Search"
           onChange={updateSearch}
         />
         <button className="search-button" type="submit">
@@ -47,19 +50,19 @@ const App = () => {
         </button>
       </form>
       <div className="recipes">
-        {recipes.map(recipe => (
+        {recipes.map((recipe) => (
           <Recipe
             key={recipe.recipe.label}
             title={recipe.recipe.label}
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
-
+            digest={recipe.recipe.digest}
           />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default App;
